@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="todo-panel" aria-labelledby="app-title">
+      <div class="panel-header">
+        <p class="eyebrow">Daily planner</p>
+        <h1 id="app-title">To-Do List</h1>
+        <p class="subtitle">Plan your work, keep priorities visible, and finish the day with a cleaner mind.</p>
+      </div>
+
+      <form class="task-form" id="task-form">
+        <label class="sr-only" for="task-input">Add a new task</label>
+        <input type="text" id="task-input" placeholder="Add a task..." autocomplete="off" required>
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="toolbar" aria-label="Task filters">
+        <button class="filter-btn active" type="button" data-filter="all">All</button>
+        <button class="filter-btn" type="button" data-filter="active">Active</button>
+        <button class="filter-btn" type="button" data-filter="completed">Done</button>
+      </div>
+
+      <ul class="task-list" id="task-list" aria-live="polite"></ul>
+
+      <div class="empty-state" id="empty-state">
+        <span>Nothing here yet</span>
+        <p>Add your first task and start the list with one clear step.</p>
+      </div>
+
+      <footer class="panel-footer">
+        <span id="task-count">0 tasks left</span>
+        <button type="button" id="clear-completed">Clear completed</button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
